@@ -1,0 +1,49 @@
+{
+  "name": "food-app",
+  "version": "1.0.0",
+  "description": "A food app for managing recipes and shopping lists.",
+  "main": "main.ts",
+  "scripts": {
+    "build": "tsc -p src",
+    "start": "node src/database.ts",
+    "dev": "tsc -w -p src",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@types/javascript-utilities": "^1.1.3",
+    "@types/node": "^14.17.39",
+    "typeorm": "^0.28.3",
+    "ts-jest": "^26.6.3",
+    "ts-node": "^10.9.1",
+    "ts-loader": "^8.0.0",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.6.38",
+    "@types/supertest": "^2.0.10",
+    "jest": "^26.6.3",
+    "supertest": "^6.1.3"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "typescript": "^4.4.4"
+  },
+  "browser": {
+    "dist/index.html": ["src/index.html"]
+  },
+  " jest": {
+    "transform": {
+      ".+\\.(ts|tsx)$": "ts"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/styles.css"
+    },
+    "setupFilesAfterEnv": ["<rootDir>/utils/api.ts"],
+    "testPathIgnorePatterns": ["node_modules/", "public/images/"]
+  }
+}
